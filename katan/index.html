@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catan Score Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-top">
+        <h1>Catan Score Tracker</h1>
+        <div class="goal-wrapper">
+            <span>Goal:</span>
+            <input type="number" id="target-score-input" value="10" min="1">
+        </div>
+    </div>
+    
+    <details class="scenario-config" open>
+        <summary>🛠️ シナリオ・拡張の組み合わせ選択</summary>
+        <div class="config-grid" id="module-checkboxes">
+            </div>
+        <div class="manual-add">
+            <small>※その他:</small>
+            <input type="text" id="new-rule-name" placeholder="ルール名" style="width:100px;">
+            <input type="number" id="new-rule-points" value="1" style="width:40px;">
+            <select id="new-rule-type">
+                <option value="boolean">独占</option>
+                <option value="counter">累積</option>
+            </select>
+            <button onclick="addCustomRule()" class="mini-btn">追加</button>
+        </div>
+    </details>
+
+    <button id="add-player-btn" class="full-width-btn">+ プレイヤー追加</button>
+</header>
+
+<main id="player-container">
+    </main>
+
+<div id="winner-modal" class="modal hidden">
+    <div class="modal-content">
+        <h2 id="winner-name"></h2>
+        <p>勝利条件 <span id="winner-score-display"></span>点 達成！</p>
+        <button onclick="closeModal()">閉じる</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
