@@ -59,6 +59,38 @@ h1 { margin: 0; font-size: 1.2rem; }
 }
 .config-item input { margin-right: 6px; }
 
+/* ★追加修正: 手動追加ルールのリスト表示 */
+.custom-rules-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.custom-rule-tag {
+    background: #e67e22;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.remove-rule-btn {
+    background: rgba(0,0,0,0.2);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 10px;
+    line-height: 1;
+}
+
 .manual-add {
     border-top: 1px solid rgba(255,255,255,0.3); padding-top: 8px;
     display: flex; gap: 5px; align-items: center; flex-wrap: wrap; font-size: 0.8rem;
@@ -69,18 +101,15 @@ button { cursor: pointer; border: none; border-radius: 4px; font-weight: bold; t
 .mini-btn { padding: 4px 8px; background: #8e44ad; color: white; }
 .full-width-btn { width: 100%; padding: 8px; background: #27ae60; color: white; font-size: 1rem;}
 
-/* --- レイアウト調整 (4人横並び) --- */
 #player-container {
     display: grid;
-    /* デスクトップでは4列固定 */
     grid-template-columns: repeat(4, 1fr);
     gap: 0.8rem;
     padding: 1rem;
-    max-width: 1800px; /* 横幅を広く取る */
+    max-width: 1800px; 
     margin: 0 auto;
 }
 
-/* 画面が狭い場合（タブレット・スマホ）は折り返す */
 @media (max-width: 1200px) {
     #player-container {
         grid-template-columns: repeat(2, 1fr);
