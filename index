@@ -1,0 +1,237 @@
+// カードデータ定義
+const CARD_DATA = [
+    // 2 (1枚)
+    { 
+        number: 2, 
+        title: "豊作の年", 
+        count: 1, 
+        text: "全員、それぞれ好きな資源を1枚ずつ受け取る<br><br><strong>都市と騎士版：</strong>交易品カードを取ることはできない" 
+    },
+    // 3 (2枚)
+    { 
+        number: 3, 
+        title: "闘争", 
+        count: 1, 
+        text: "単独で最も多く騎士カードを出しているか、「最大騎士力」のボーナスカードをもっている人は、ほかの人の手札から資源カードを1枚（中身を見ないで）奪う。発展カードを取ることはできない<br><br><strong>都市と騎士版：</strong>活動状態にある騎士の強さの合計が単独で最も多い人が、ほかの人の手札から資源カードを1枚奪う（戦略カードは不可）" 
+    },
+    { 
+        number: 3, 
+        title: "イベントなし", 
+        count: 1, 
+        text: "開拓者たちは勤勉に働き、カタン島は繁栄している（イベントは無し）" 
+    },
+    // 4 (3枚)
+    { 
+        number: 4, 
+        title: "盗賊の退却", 
+        count: 2, 
+        text: "盗賊を砂漠に戻す。その際、その砂漠に面して開拓地や都市をもっている人が、カードを引かれることはない" 
+    },
+    { 
+        number: 4, 
+        title: "イベントなし", 
+        count: 1, 
+        text: "開拓者たちは勤勉に働き、カタン島は繁栄している（イベントは無し）" 
+    },
+    // 5 (4枚)
+    { 
+        number: 5, 
+        title: "有利な交易", 
+        count: 1, 
+        text: "「最長交易路」のボーナスカードをもっている人は、ほかのプレイヤー1人の手札から資源カードを1枚（中身を見ないで）引く。発展カードを取ることはできない<br><br><strong>都市と騎士版：</strong>戦略カードを取ることはできない" 
+    },
+    { 
+        number: 5, 
+        title: "騎士の試合", 
+        count: 1, 
+        text: "公開している騎士カードが最も多い人（複数の場合はその全員）が、好きな資源を1枚受け取る<br><br><strong>都市と騎士版：</strong>活動状態にある騎士の強さの合計が最も多い人が受け取る。交易品カードを取ることはできない" 
+    },
+    { 
+        number: 5, 
+        title: "イベントなし", 
+        count: 2, 
+        text: "開拓者たちは勤勉に働き、カタン島は繁栄している（イベントは無し）" 
+    },
+    // 6 (5枚)
+    { 
+        number: 6, 
+        title: "地震", 
+        count: 1, 
+        text: "全員、自分の街道1本を横向きにする。街道を建設するには、その前にこの街道を修復しなければならなくなる。修復コストは木材とレンガ1枚ずつ。横になっている街道も「最長交易路」の数に含めることができる" 
+    },
+    { 
+        number: 6, 
+        title: "疫病", 
+        count: 1, 
+        text: "今回は全員、都市からは資源が1枚しか産出されない<br><br><strong>都市と騎士版：</strong>今回は交易品カードを取ることはできない" 
+    },
+    { 
+        number: 6, 
+        title: "良き隣人", 
+        count: 1, 
+        text: "資源カードをもっている人は全員、それぞれ左隣のプレイヤーに自分の選んだ1枚をあげる<br><br><strong>都市と騎士版：</strong>交易品カードをあげることもできる" 
+    },
+    { 
+        number: 6, 
+        title: "イベントなし", 
+        count: 2, 
+        text: "開拓者たちは勤勉に働き、カタン島は繁栄している（イベントは無し）" 
+    },
+    // 7 (6枚)
+    { 
+        number: 7, 
+        title: "盗賊の襲撃", 
+        count: 6, 
+        text: "1. 資源カードを8枚以上もっている人は、半分を捨てる<br>2. 盗賊を移動させ、盗賊が移動した土地に面して開拓地や都市がある人の手札から、資源を1枚奪う（発展カードは不可）" 
+    },
+    // 8 (5枚)
+    { 
+        number: 8, 
+        title: "疫病", 
+        count: 1, 
+        text: "今回は全員、都市からは資源が1枚しか産出されない<br><br><strong>都市と騎士版：</strong>今回は交易品カードを取ることはできない" 
+    },
+    { 
+        number: 8, 
+        title: "イベントなし", 
+        count: 4, 
+        text: "開拓者たちは勤勉に働き、カタン島は繁栄している（イベントは無し）" 
+    },
+    // 9 (4枚)
+    { 
+        number: 9, 
+        title: "静かな海", 
+        count: 1, 
+        text: "港に建設している開拓地と都市が最も多い人（複数の場合はその全員）が、好きな資源を1枚受け取る<br><br><strong>都市と騎士版：</strong>交易品カードを取ることはできない" 
+    },
+    { 
+        number: 9, 
+        title: "イベントなし", 
+        count: 3, 
+        text: "開拓者たちは勤勉に働き、カタン島は繁栄している（イベントは無し）" 
+    },
+    // 10 (3枚)
+    { 
+        number: 10, 
+        title: "隣人の援助", 
+        count: 1, 
+        text: "ポイントが最も多い人（複数の場合はその全員）が、自分よりポイントの少ないプレイヤー1人を選び、自分が選んだ資源カードを1枚あげる<br><br><strong>都市と騎士版：</strong>交易品カードをあげることもできる" 
+    },
+    { 
+        number: 10, 
+        title: "イベントなし", 
+        count: 2, 
+        text: "開拓者たちは勤勉に働き、カタン島は繁栄している（イベントは無し）" 
+    },
+    // 11 (2枚)
+    { 
+        number: 11, 
+        title: "隣人の援助", 
+        count: 1, 
+        text: "ポイントが最も多い人（複数の場合はその全員）が、自分よりポイントの少ないプレイヤー1人を選び、自分が選んだ資源カードを1枚あげる<br><br><strong>都市と騎士版：</strong>交易品カードをあげることもできる" 
+    },
+    { 
+        number: 11, 
+        title: "イベントなし", 
+        count: 1, 
+        text: "開拓者たちは勤勉に働き、カタン島は繁栄している（イベントは無し）" 
+    },
+    // 12 (1枚)
+    { 
+        number: 12, 
+        title: "静かな海", 
+        count: 1, 
+        text: "港に建設している開拓地と都市が最も多い人（複数の場合はその全員）が、好きな資源を1枚受け取る<br><br><strong>都市と騎士版：</strong>交易品カードを取ることはできない" 
+    }
+];
+
+const NEW_YEAR_CARD = {
+    number: "★",
+    title: "新年",
+    text: "1. このカード以外をよく混ぜる<br>2. 裏向きのまま5枚を取り出し、その上にこのカードを乗せる<br>3. 残りの31枚をその上に乗せる<br>4. 改めてイベントカードをめくる",
+    isNewYear: true
+};
+
+let deck = [];
+let drawIndex = 0;
+let isNewYearState = false;
+
+// 要素取得
+const cardDisplay = document.getElementById('card-display');
+const cardTitle = document.getElementById('card-title');
+const cardNumber = document.getElementById('card-number');
+const cardText = document.getElementById('card-text');
+const deckCountSpan = document.getElementById('deck-count');
+
+// 初期化
+initDeck();
+
+function initDeck() {
+    let tempDeck = [];
+    CARD_DATA.forEach(card => {
+        for(let i=0; i < card.count; i++) tempDeck.push({...card});
+    });
+    shuffle(tempDeck);
+
+    const bottomFive = tempDeck.slice(0, 5);
+    const remainingTop = tempDeck.slice(5);
+    deck = [...remainingTop, NEW_YEAR_CARD, ...bottomFive];
+    
+    drawIndex = 0;
+    isNewYearState = false;
+    updateDeckCount();
+    resetCardUI();
+}
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+cardDisplay.addEventListener('click', () => {
+    if (isNewYearState) {
+        initDeck();
+        return;
+    }
+    if (drawIndex >= deck.length) {
+        alert("デッキ終了。タップしてリセット。");
+        initDeck();
+        return;
+    }
+    const card = deck[drawIndex];
+    drawIndex++;
+    renderCard(card);
+    updateDeckCount();
+});
+
+function renderCard(card) {
+    cardDisplay.classList.remove('back');
+    cardDisplay.className = 'card';
+    if (card.isNewYear) {
+        cardDisplay.classList.add('new-year');
+        cardNumber.textContent = "★";
+        cardTitle.textContent = card.title;
+        cardText.innerHTML = card.text; // innerHTMLでタグを反映
+        isNewYearState = true;
+    } else {
+        if (typeof card.number === 'number') {
+            cardDisplay.classList.add(`num-${card.number}`);
+        }
+        cardNumber.textContent = card.number;
+        cardTitle.textContent = card.title;
+        cardText.innerHTML = card.text; // innerHTMLでタグを反映
+    }
+}
+
+function resetCardUI() {
+    cardDisplay.className = 'card back';
+    cardNumber.textContent = "";
+    cardTitle.textContent = "";
+    cardText.innerHTML = "画面をタップして<br>スタート";
+}
+
+function updateDeckCount() {
+    deckCountSpan.textContent = deck.length - drawIndex;
+}
